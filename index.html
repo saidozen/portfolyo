@@ -3,67 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Said Özen | Kişisel Portfolyo</title>
+    <title>Said Özen | Büyük Veri Analisti & Portfolyo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: #0b0f19;
             color: #f8fafc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            line-height: 1.6;
             padding: 20px;
         }
-        .card {
-            background: rgba(17, 24, 39, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 40px;
-            max-width: 500px;
-            width: 100%;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            margin-bottom: 50px;
+        }
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #22c55e;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
         }
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 800;
             color: #22c55e;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .title-sub {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #94a3b8;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
-        p {
-            font-size: 1rem;
+        .bio {
+            font-size: 1.05rem;
             color: #cbd5e1;
-            line-height: 1.6;
-            margin-bottom: 24px;
-        }
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-        .tag {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: #e2e8f0;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
         }
         .btn-group {
             display: flex;
             gap: 12px;
             justify-content: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         .btn {
             background: #22c55e;
@@ -84,35 +74,115 @@
             color: #fff;
         }
         .btn-outline:hover { background: rgba(255, 255, 255, 0.05); }
-        .socials {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            font-size: 1.5rem;
+        
+        section {
+            margin-bottom: 50px;
         }
-        .socials a { color: #94a3b8; transition: 0.2s; }
-        .socials a:hover { color: #22c55e; }
+        h2 {
+            font-size: 1.8rem;
+            color: #f8fafc;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-tag {
+            background: rgba(17, 24, 39, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .project-card {
+            background: rgba(17, 24, 39, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            transition: 0.2s;
+        }
+        .project-card:hover {
+            border-color: #22c55e;
+            transform: translateY(-3px);
+        }
+        .project-card h3 {
+            color: #22c55e;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .project-card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Said Özen</h1>
-        <div class="title-sub">Büyük Veri Analistliği Öğrencisi</div>
-        
-        <p>Büyük Veri Analistliği programında öğrenciyim. Veri analitiği, yazılım ve modern web teknolojileri alanlarında çalışıyor, kendimi geliştiriyorum.</p>
-        
-        <div class="tags">
-            <span class="tag">Büyük Veri</span>
-            <span class="tag">Veri Analitiği</span>
-            <span class="tag">Web Geliştirme</span>
-            <span class="tag">Python & SQL</span>
-        </div>
+    <div class="container">
+        <!-- HEADER / KİŞİSEL BİLGİLER -->
+        <header>
+            <img src="IMG_0379.jpeg" alt="Said Özen" class="profile-img">
+            <h1>Said Özen</h1>
+            <div class="title-sub">Büyük Veri Analistliği Öğrencisi</div>
+            <p class="bio">
+                Veri analitiği, büyük veri işleme ve modern yazılım teknolojileri üzerine çalışan, kendini sürekli geliştiren bir teknoloji tutkunuyum.
+            </p>
+            <div class="btn-group">
+                <a href="mailto:epostan@ornek.com" class="btn"><i class="fa-solid fa-envelope"></i> İletişime Geç</a>
+                <a href="https://github.com/saidozen" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+        </header>
 
-        <div class="btn-group">
-            <a href="mailto:epostan@ornek.com" class="btn"><i class="fa-solid fa-envelope"></i> İletişim</a>
-            <a href="https://github.com/saidozen" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
-        </div>
+        <!-- YETENEKLER -->
+        <section>
+            <h2>Yetenekler & Teknolojiler</h2>
+            <div class="skills-grid">
+                <div class="skill-tag"><i class="fa-brands fa-python"></i> Python</div>
+                <div class="skill-tag"><i class="fa-solid fa-database"></i> SQL / Veritabanları</div>
+                <div class="skill-tag"><i class="fa-solid fa-chart-bar"></i> Veri Analizi</div>
+                <div class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git & GitHub</div>
+                <div class="skill-tag"><i class="fa-brands fa-docker"></i> Docker</div>
+                <div class="skill-tag"><i class="fa-solid fa-code"></i> HTML & CSS</div>
+            </div>
+        </section>
+
+        <!-- PROJELER -->
+        <section>
+            <h2>Öne Çıkan Projeler</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Proje Adı 1 (Örn: Veri Analizi Çalışması)</h3>
+                    <p>Bu alanda yaptığın projeyi kısaca açıklayabilirsin. Hangi araçları kullandığını ve ne amaçla yaptığını belirtebilirsin.</p>
+                    <a href="#" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;"><i class="fa-solid fa-code-branch"></i> İncele</a>
+                </div>
+                <div class="project-card">
+                    <h3>Proje Adı 2 (Örn: Portfolyo Sitesi)</h3>
+                    <p>Kendi kişisel web siten ve GitHub üzerinden yürüttüğün diğer geliştirmeler.</p>
+                    <a href="#" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;"><i class="fa-solid fa-code-branch"></i> İncele</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2026 Said Özen. Tüm hakları saklıdır.</p>
+        </footer>
     </div>
 </body>
 </html>
-
