@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Said Özen | Büyük Veri Analisti & Portfolyo</title>
+    <title>Said Özen | Veri Analisti & Portfolyo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
@@ -40,13 +40,14 @@
         }
         .title-sub {
             font-size: 1.2rem;
-            color: #94a3b8;
+            color: #38bdf8;
             margin-bottom: 20px;
+            font-weight: 600;
         }
         .bio {
             font-size: 1.05rem;
             color: #cbd5e1;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto 30px auto;
         }
         .btn-group {
@@ -97,29 +98,38 @@
             border-radius: 8px;
             font-size: 0.95rem;
             color: #e2e8f0;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
-        .projects-grid {
+        .projects-grid, .experience-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
         }
-        .project-card {
+        .project-card, .exp-card {
             background: rgba(17, 24, 39, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
             padding: 24px;
             transition: 0.2s;
         }
-        .project-card:hover {
+        .project-card:hover, .exp-card:hover {
             border-color: #22c55e;
             transform: translateY(-3px);
         }
-        .project-card h3 {
+        .project-card h3, .exp-card h3 {
             color: #22c55e;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             font-size: 1.3rem;
         }
-        .project-card p {
+        .exp-company {
+            font-size: 0.95rem;
+            color: #38bdf8;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .project-card p, .exp-card p {
             color: #94a3b8;
             font-size: 0.95rem;
             margin-bottom: 15px;
@@ -139,9 +149,9 @@
         <header>
             <img src="IMG_0379.jpeg" alt="Said Özen" class="profile-img">
             <h1>Said Özen</h1>
-            <div class="title-sub">Büyük Veri Analistliği Öğrencisi</div>
+            <div class="title-sub">Veri Analisti & Büyük Veri Analistliği Öğrencisi</div>
             <p class="bio">
-                Veri analitiği, büyük veri işleme ve modern yazılım teknolojileri üzerine çalışan, kendini sürekli geliştiren bir teknoloji tutkunuyum.
+                Python ve Excel başta olmak üzere modern araçlar kullanarak veri analitiği ve veri modelleme üzerine çalışıyorum. Geçmişteki operasyonel liderlik ve sektörel deneyimlerimi, güçlü analitik bakış açısıyla harmanlayarak katma değer üretiyorum.
             </p>
             <div class="btn-group">
                 <a href="mailto:epostan@ornek.com" class="btn"><i class="fa-solid fa-envelope"></i> İletişime Geç</a>
@@ -151,30 +161,42 @@
 
         <!-- YETENEKLER -->
         <section>
-            <h2>Yetenekler & Teknolojiler</h2>
+            <h2>Yetenekler & Araçlar</h2>
             <div class="skills-grid">
-                <div class="skill-tag"><i class="fa-brands fa-python"></i> Python</div>
+                <div class="skill-tag"><i class="fa-brands fa-python" style="color: #38bdf8;"></i> Python (Veri Analizi)</div>
+                <div class="skill-tag"><i class="fa-solid fa-file-excel" style="color: #22c55e;"></i> İleri Düzey Excel</div>
                 <div class="skill-tag"><i class="fa-solid fa-database"></i> SQL / Veritabanları</div>
-                <div class="skill-tag"><i class="fa-solid fa-chart-bar"></i> Veri Analizi</div>
+                <div class="skill-tag"><i class="fa-solid fa-chart-bar"></i> Veri Görselleştirme</div>
                 <div class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git & GitHub</div>
                 <div class="skill-tag"><i class="fa-brands fa-docker"></i> Docker</div>
-                <div class="skill-tag"><i class="fa-solid fa-code"></i> HTML & CSS</div>
+            </div>
+        </section>
+
+        <!-- İŞ DENEYİMLERİ -->
+        <section>
+            <h2>İş Deneyimleri</h2>
+            <div class="experience-grid">
+                <div class="exp-card">
+                    <h3>Veri Analisti & Veri Odaklı Projeler</h3>
+                    <div class="exp-company">Python & Excel ile Veri Analitiği</div>
+                    <p>Ham verilerin toplanması, temizlenmesi ve analiz edilmesi süreçlerinde Python kütüphaneleri ve Excel kullanarak raporlama ve veri modelleme çalışmaları yürütüyorum.</p>
+                </div>
+                <div class="exp-card">
+                    <h3>Bar Şefi</h3>
+                    <div class="exp-company">Sektörel Operasyon & Ekip Yönetimi</div>
+                    <p>Operasyonel süreçlerin yönetimi, stok takibi, ekip koordinasyonu ve yüksek tempolu ortamlarda kriz yönetimi konularında profesyonel deneyim kazandım.</p>
+                </div>
             </div>
         </section>
 
         <!-- PROJELER -->
         <section>
-            <h2>Öne Çıkan Projeler</h2>
+            <h2>Öne Çıkan Proje</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>Proje Adı 1 (Örn: Veri Analizi Çalışması)</h3>
-                    <p>Bu alanda yaptığın projeyi kısaca açıklayabilirsin. Hangi araçları kullandığını ve ne amaçla yaptığını belirtebilirsin.</p>
-                    <a href="#" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;"><i class="fa-solid fa-code-branch"></i> İncele</a>
-                </div>
-                <div class="project-card">
-                    <h3>Proje Adı 2 (Örn: Portfolyo Sitesi)</h3>
-                    <p>Kendi kişisel web siten ve GitHub üzerinden yürüttüğün diğer geliştirmeler.</p>
-                    <a href="#" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;"><i class="fa-solid fa-code-branch"></i> İncele</a>
+                    <h3>Fragrantica Esans Analiz ve Öneri Sistemi</h3>
+                    <p>Kullanıcıların tercih ettiği (sevdiği) veya kaçındığı esans/nota bilgilerine dayanarak, veri filtreleme algoritmalarıyla en uygun parfümleri öneren Python tabanlı veri analitiği projesi.</p>
+                    <a href="https://github.com/saidozen" target="_blank" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;"><i class="fa-solid fa-code-branch"></i> GitHub'da İncele</a>
                 </div>
             </div>
         </section>
