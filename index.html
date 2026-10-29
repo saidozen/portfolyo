@@ -143,9 +143,73 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding-top: 20px;
         }
+
+        /* ÜST MENÜ: sayfa kaydırılsa da üstte sabit kalır */
+        .ust-menu {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            padding: 10px;
+            margin: -20px -20px 0;
+            background: rgba(11, 15, 25, 0.88);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .ust-menu a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 6px 14px;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+        .ust-menu a:hover { color: #22c55e; background: rgba(34, 197, 94, 0.08); }
+        /* menüye tıklayınca başlık sabit menünün altında kalmasın */
+        section[id] { scroll-margin-top: 70px; }
+
+        /* PROJE KARTI ETİKETLERİ VE GÖMÜLÜ AĞ */
+        .proje-etiketler {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+        .proje-etiketler span {
+            font-size: 0.8rem;
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 2px 10px;
+            border-radius: 999px;
+        }
+        .project-card.genis:hover { transform: none; }
+        .gomulu-ag {
+            width: 100%;
+            height: 620px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            background: #12171d;
+        }
+        @media (max-width: 600px) {
+            .gomulu-ag { height: 520px; }
+            .ust-menu { gap: 0; }
+            .ust-menu a { padding: 6px 9px; font-size: 0.88rem; }
+            h1 { font-size: 2.2rem; }
+        }
     </style>
 </head>
 <body>
+    <nav class="ust-menu">
+        <a href="#">Ana Sayfa</a>
+        <a href="#yetenekler">Yetenekler</a>
+        <a href="#deneyim">Deneyim</a>
+        <a href="#projeler">Projeler</a>
+    </nav>
     <div class="container">
         <!-- HEADER / KİŞİSEL BİLGİLER -->
         <header>
@@ -158,7 +222,8 @@
             
             <!-- İLETİŞİM VE SOSYAL MEDYA BUTONLARI -->
             <div class="btn-group">
-                <a href="mailto:epostan@ornek.com" class="btn"><i class="fa-solid fa-envelope"></i> İletişim</a>
+                <a href="#projeler" class="btn"><i class="fa-solid fa-folder-open"></i> Projeler</a>
+                <a href="mailto:epostan@ornek.com" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> İletişim</a>
                 <a href="https://www.instagram.com/said.ozen?stkn=Z3I1d3k5YWNtcGo2&utm_source=qr" target="_blank" class="btn btn-outline"><i class="fa-brands fa-instagram"></i> Instagram</a>
                 <a href="https://www.linkedin.com/in/said-%C3%B6zen-7867ab43a?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" class="btn btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
                 <a href="https://github.com/saidozen" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
@@ -167,7 +232,7 @@
         </header>
 
         <!-- YETENEKLER -->
-        <section>
+        <section id="yetenekler">
             <h2>Yetenekler & Araçlar</h2>
             <div class="skills-grid">
                 <div class="skill-tag"><i class="fa-brands fa-python" style="color: #38bdf8;"></i> Python & Makine Öğrenmesi</div>
@@ -181,7 +246,7 @@
         </section>
 
         <!-- İŞ DENEYİMLERİ -->
-        <section>
+        <section id="deneyim">
             <h2>İş Deneyimleri</h2>
             <div class="experience-grid">
                 <div class="exp-card">
@@ -198,9 +263,29 @@
         </section>
 
         <!-- PROJELER -->
-        <section>
-            <h2>Öne Çıkan Proje</h2>
+        <section id="projeler">
+            <h2>Projeler</h2>
             <div class="projects-grid">
+
+                <!-- PROJE: Türkiye elektrik iletim ağı (Sosyal Ağ Analizi) -->
+                <div class="project-card genis" id="iletim-agi">
+                    <h3>Türkiye Elektrik İletim Altyapısı: Kaskad Arıza Simülasyonu</h3>
+                    <div class="exp-company">Sosyal Ağ Analizi · Kritik altyapı ağı</div>
+                    <div class="proje-etiketler">
+                        <span>Python</span><span>NetworkX</span><span>Cytoscape.js</span><span>OpenStreetMap</span><span>Ağ Analizi</span>
+                    </div>
+                    <p>OpenStreetMap verisinden 1.193 trafo merkezli Türkiye iletim ağını kurdum; eklem noktası analiziyle tek hata noktalarını, Motter–Lai yük yeniden dağıtım modeliyle zincirleme arızanın nasıl yayıldığını inceledim. Aşağıdaki haritada bir trafo merkezine tıklayıp <strong>"Arızayı başlat"</strong> ile arızanın dalga dalga yayılışını izleyebilirsiniz.</p>
+                    <iframe class="gomulu-ag" src="https://saidozen.github.io/turkiye-elektrik-iletim-agi/interaktif/" loading="lazy" title="Türkiye iletim şebekesi etkileşimli ağı"></iframe>
+                    <div class="btn-group" style="justify-content: flex-start; margin-bottom: 0;">
+                        <a href="https://saidozen.github.io/turkiye-elektrik-iletim-agi/interaktif/" target="_blank" class="btn" style="padding: 6px 12px; font-size: 0.85rem;"><i class="fa-solid fa-up-right-from-square"></i> Tam ekran aç</a>
+                        <a href="https://github.com/saidozen/turkiye-elektrik-iletim-agi" target="_blank" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;"><i class="fa-solid fa-code-branch"></i> Kod</a>
+                        <a href="https://saidozen.github.io/turkiye-elektrik-iletim-agi/rapor.pdf" target="_blank" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;"><i class="fa-solid fa-file-pdf"></i> Rapor</a>
+                        <a href="https://saidozen.github.io/turkiye-elektrik-iletim-agi/poster.pdf" target="_blank" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;"><i class="fa-solid fa-image"></i> Poster</a>
+                        <a href="https://saidozen.github.io/turkiye-elektrik-iletim-agi/sunum.pdf" target="_blank" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;"><i class="fa-solid fa-person-chalkboard"></i> Sunum</a>
+                    </div>
+                </div>
+
+                <!-- PROJE: Fragrantica -->
                 <div class="project-card">
                     <h3>Fragrantica Esans Analiz ve Öneri Sistemi</h3>
                     <p>Kullanıcıların tercih ettiği veya kaçındığı esans/nota bilgilerine dayanarak; <strong>kNN</strong>, <strong>Bayesyen sınıflandırma</strong>, <strong>puan tahmini</strong> ve <strong>regresyon</strong> yöntemleriyle en doğru parfümleri analiz edip öneren gelişmiş bir veri analitiği projesi.</p>
@@ -216,15 +301,3 @@
     </div>
 </body>
 </html>
-
-<section id="iletim-agi">
-  <h2>Türkiye Elektrik İletim Altyapısı: Kaskad Arıza Simülasyonu</h2>
-  <p>OpenStreetMap'ten kurulan 1.193 trafo merkezli ağda tek hata noktaları (eklem noktaları) ve Motter–Lai yük yeniden dağıtım modeliyle zincirleme arıza simülasyonu. Bir merkeze tıklayıp "Arızayı başlat" ile arızanın yayılışını izleyebilirsiniz.</p>
-  <iframe src="https://saidozen.github.io/turkiye-elektrik-iletim-agi/interaktif/" width="100%" height="720" style="border:0" loading="lazy" title="Türkiye iletim şebekesi etkileşimli ağı"></iframe>
-  <p>
-    <a href="https://github.com/saidozen/turkiye-elektrik-iletim-agi">Kod (GitHub)</a> ·
-    <a href="https://saidozen.github.io/turkiye-elektrik-iletim-agi/rapor.pdf">Rapor</a> ·
-    <a href="https://saidozen.github.io/turkiye-elektrik-iletim-agi/poster.pdf">Poster</a> ·
-    <a href="https://saidozen.github.io/turkiye-elektrik-iletim-agi/sunum.pdf">Sunum</a>
-  </p>
-</section>
